@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: relative;
+    background-image: url(../images/background\ \(8\).jpg);
+    color: white;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.inner-header {
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+}
+
+#gushici {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav {
+    position: fixed;
+    height: 56px;
+    z-index: 100;
+    transition: all .3s;
+    width: 100%;
+}
+
+.max-nav {
+    width: 1250px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    line-height: 56px;
+}
+
+.nav-bar li {
+    position: relative;
+}
+
+.nav-bar li::before {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: #539dfd;
+    position: absolute;
+    bottom: 0;
+    transition: all .3s;
+}
+
+.nav-bar li:hover::before {
+    width: 100%;
+}
+
+.nav-bar a {
+    font-family: Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-bar a:hover {
+    color: #539dfd !important;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+    position: relative;
+}
+
+.search {
+    cursor: pointer;
+}
+
+.search:hover {
+    color: #539dfd;
+}
+
+.toolbar div {
+    line-height: 56px;
+}
+
+#datetime {
+    font-family: Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#datetime:hover {
+    color: #539dfd;
+}
+
+.hover-date {
+    position: absolute;
+    bottom: 18px;
+    transform: translateY(100%);
+    font-family: Helvetica Neue,
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 7px;
+    background-color: #fff;
+    color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s .2s;
+}
+
+#datetime:hover+.hover-date {
+    transition: all 0.8s .6s;
+    bottom: -4px;
+    visibility: visible;
+    opacity: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* 主要内容 */
+.content-main {
+    height: 200vh;
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+
+    70% {
+        transform: translateY(10px);
+    }
+
+    90% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.main div {
+    width: 1250px;
+    height: 300px;
+    border-radius: 20px;
+    margin: 50px auto;
+    background-color: pink;
+}
+
+.fadeInUp {
+    animation: fadeInUp 1s ease-in-out;
+}

@@ -1,0 +1,236 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ ul {
+     list-style: none;
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ body::-webkit-scrollbar {
+     display: none;
+ }
+
+ .content {
+     height: 200vh;
+     transition: all 0.8s ease-in-out;
+     z-index: 100;
+     background: radial-gradient(#313131, #0a0a0a);
+     position: relative;
+ }
+
+ /* 欢迎页 */
+ .content-intro {
+     display: flex;
+     justify-content: center;
+     height: 100vh;
+     align-items: center;
+ }
+
+ @keyframes logoEnter {
+     0% {
+         opacity: 0;
+         width: 0rem;
+         height: 0rem;
+     }
+
+     20% {
+         opacity: 1;
+         width: 15rem;
+         height: 15rem;
+     }
+
+     80% {
+         transform: rotate(360deg);
+         width: 15rem;
+         height: 15rem;
+     }
+
+     100% {
+         transform: rotate(360deg);
+         width: 100%;
+         height: 100%;
+         border-radius: 0;
+     }
+ }
+
+ .content_wrapper {
+     height: 100vh;
+     display: flex;
+     background-image: url(../images/background\ \(4\).jpg);
+     background-position: center;
+     background-size: cover;
+     overflow: hidden;
+     border-radius: 100%;
+     justify-content: center;
+     align-items: center;
+     animation: logoEnter 1.2s;
+     animation-fill-mode: forwards;
+ }
+
+ .inner {
+     position: relative;
+ }
+
+ .logo {
+     cursor: pointer;
+     position: absolute;
+     transform: translate(-50%, -50%);
+     transition: all .8s;
+     -webkit-transition: all .8s;
+     top: 0;
+ }
+
+ .hello_bottom {
+     cursor: pointer;
+     position: absolute;
+     transform: translate(-50%, -50%);
+     text-align: center;
+     width: 18rem;
+     top: 110px;
+     color: #fff;
+     opacity: 0;
+     transition: all .8s;
+     -webkit-transition: all .8s;
+ }
+
+ .hello_bottom_text {
+     font-size: 1rem;
+     border-top: 1px solid #fff;
+     margin-top: .5rem;
+     padding-top: .5rem;
+ }
+
+ /* 双箭头跳动 */
+ .arrow_bar {
+     position: relative;
+     margin-left: -16px;
+     left: -50%;
+     bottom: -44%;
+     height: 35px;
+     width: 16px;
+     transform: translateX(50%);
+     opacity: 0;
+     transition: all 2s;
+ }
+
+ .arrow {
+     position: absolute;
+     top: 50%;
+     height: 10px;
+     width: 10px;
+     border-left: 4px #fff solid;
+     border-bottom: 4px #fff solid;
+     transform: rotate(-45deg);
+ }
+
+ @keyframes arrow-movement {
+     0% {
+         opacity: 0;
+         top: -50%;
+     }
+
+     70% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0;
+     }
+ }
+
+ .arrow-1 {
+     animation: arrow-movement 2s ease-in-out infinite;
+ }
+
+ .arrow-2 {
+     animation: arrow-movement 2s 1s ease-in-out infinite;
+ }
+
+ .shape-wrap {
+     z-index: 100;
+ }
+
+ .shape {
+     height: 100vh;
+     width: 100%;
+     display: block;
+     fill: #222325;
+ }
+
+ .nav-page {
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     background: radial-gradient(#313131, #0a0a0a);
+     top: 0;
+     left: 0;
+ }
+
+ .card {
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+ }
+
+ .card-inner {
+     width: 35%;
+     transform: translateY(100px);
+     transition: all .8s ease-in;
+ }
+
+ header h1 {
+     margin: 15px auto;
+     color: #fff;
+     font-size: 2rem;
+     font-family: Helvetica Neue,
+         Helvetica,
+         Arial,
+         sans-serif;
+     letter-spacing: 5px;
+ }
+
+ header h2 {
+     color: #ccc;
+     letter-spacing: 6px;
+     font-size: .8rem;
+     font-weight: lighter;
+     margin: 10px auto;
+ }
+
+ .nav {
+     display: flex;
+     padding: 40px 0;
+     border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+     border-top: 1px solid hsla(0, 0%, 100%, .1);
+ }
+
+ .nav li {
+     width: 100%;
+     border-left: 1px solid hsla(0, 0%, 100%, .1);
+     border-right: 1px solid hsla(0, 0%, 100%, .1);
+ }
+
+ .nav li a {
+     color: #b6b6b6;
+     display: block;
+     font-weight: lighter;
+ }
+
+ .nav li:hover a {
+     color: #f6f6f6;
+     text-shadow: 0 0 2px #f6f6f6;
+ }
+
+ .nav li a i {
+     display: block;
+     margin-bottom: 10px;
+     font-size: 20px;
+ }
