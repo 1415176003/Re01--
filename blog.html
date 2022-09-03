@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fl的个人博客</title>
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./font/css/all.css">
+</head>
+
+<body>
+    <div class="content-main" id="main">
+        <div class="header">
+            <!-- 导航 -->
+            <div class="nav">
+                <div class="max-nav">
+                    <ul class="nav-bar">
+                        <li>
+                            <a href="./index.html"><span class="fas fa-home"></span> 首页</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fas fa-edit"></span> 学习笔记</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fas fa-pencil-alt"></span> 随笔</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fas fa-comment-dots"></span> 留言板</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fas fa-paper-plane"></span> 关于我</a>
+                        </li>
+                    </ul>
+                    <ul class="toolbar">
+                        <div class="search fas fa-search"></div>
+                        <div id="datetime">
+                            <script>
+                                setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleTimeString();", 1000);
+                            </script>
+                        </div>
+                        <div class="hover-date">
+                            <script>
+                                setInterval("getTimes('.hover-date');");
+                            </script>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <!-- 背景 -->
+            <div class="inner-header">
+                <h1 id="gushici" style="font-size:2rem; font-family: '青叶手写体';">&lceil;&rfloor;</h1>
+                <script>
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('get', 'https://v1.jinrishici.com/all.txt');
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4) {
+                            let gushici = document.getElementById('gushici');
+                            gushici.innerHTML = '&lceil; &nbsp' + xhr.responseText + '&rfloor;';
+                        }
+                    };
+                    xhr.send();
+                </script>
+            </div>
+            <!-- 波浪 -->
+            <div>
+                <svg class="waves" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="main">
+            <div class="">
+                文章内容
+            </div>
+            <div class="">
+                文章内容
+            </div>
+            <div class="">
+                文章内容
+            </div>
+            <div class="">
+                文章内容
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/blog.js"></script>
+
+</html>
